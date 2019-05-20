@@ -39,6 +39,20 @@ def index(request):
     next = request.GET.get('next')
     if next: return redirect(next)
     return render(request, 'display/home.html',  {"all_images": all_images}, {"all_users":all_users})
+def profile_index(request):
+        if request.method == 'POST':
+           form = UploadForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+        else:
+            form =UploadForm()
+
+            images = Image.objects.all()
+            all_profile = Profile.objects.all()
+        return render(request,'profile.html', locals())
+
 
 #################################################################################################################################################################################
 #EXPLORE PAGE VIEW FUNCTION

@@ -66,7 +66,7 @@ class Image(models.Model):
 
     -imageuploader_profile-: this is the person who posted the picture (User)
         '''
-    image = models.ImageField(upload_to ='photos/')
+    image = models.ImageField(upload_to ='pictures/')
     image_caption = models.CharField(max_length=700)
     tag_someone = models.CharField(max_length=50,blank=True)
     imageuploader_profile = models.ForeignKey(User, on_delete=models.CASCADE,null='True', blank=True)
@@ -76,6 +76,19 @@ class Image(models.Model):
     '''Method to filter database results'''
     def __str__(self):
         return self.image_caption
+    def profile_index(request):
+        if request.method == 'POST':
+           form = UploadForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+        else:
+            form =UploadForm()
+
+            images = Image.objects.all()
+            all_profile = Profile.objects.all()
+        return render(request,'profile.html', locals())
 
 
 #################################################################################################################################################################################################################################
@@ -101,8 +114,9 @@ class Comments (models.Model):
     '''Method to filter database results'''
     def __str__(self):
         return self.author
-    
 
+\
+    
 
 
 #################################################################################################################################################################################################################################

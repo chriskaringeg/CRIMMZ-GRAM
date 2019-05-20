@@ -44,9 +44,7 @@
                        
                         <!-- SECTION 2 (IMAGE) -->
                         <!-- POSTED IMAGE -->
-                        <a href="{{ }}" data-lightbox="gallery">
-                            <img src="{{ .url }}" class="img-responsive" style="width:100%;margin-left: 0%;margin-top:15px; ">
-                        </a>
+                        <<!--  -->
 
                         <!--Like & Comment Section -->
                         <div class="container">
@@ -54,7 +52,7 @@
 
                                 <span class="like-row">
                                     {% if liked %}
-                                    <img class"likedhrt" src="{% static 'images/liked.png' %}" alt="liked picture"class="img-responsive"> {% else %}
+                                    <img class="likedhrt" src="{% static 'images/liked.png' %}" alt="liked picture"class="img-responsive"> {% else %}
                                     <img class="likehrt" src="{% static 'images/liked.png' %}" alt="not likedpicture" class="img-responsive"> {% endif %}
                                     <img class="commenthrt" id='comment-icon' src="../../static/images/comment.png"class="img-responsive" alt=" commentImage">
                                     <img class="savehrt" src="{% static 'images/unsaved.png' %}" alt="save picture">
