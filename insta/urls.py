@@ -1,4 +1,4 @@
-from django.urls import path
+from django.conf.urls import url
 ''' 
 This is to allow us to connect the PROJECT's  url with this APP's url 
 it will then allow us to define paths here as we had included (grams urls)

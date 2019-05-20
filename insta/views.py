@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 from .models import Profile, Image
 from django.contrib.auth.models import User
 from . import models
-from annoying.decorators import ajax_request
+
 
 from django.core.mail import send_mail
 '''
