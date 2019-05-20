@@ -21,7 +21,7 @@
         <div class="w3-card-6" style="width:56%">
 
             <div class="container">
-                {% if all_images %} {% for collins in all_images %}
+                {% if all_images %} {% for chris in all_images %}
 
                 <div class="imagepadding">
 
@@ -37,15 +37,15 @@
                          {% if all_users %} {% for user in all_users %}
                             <strong> "{{user.user}}" </strong>
                         {% endfor %}{% else %}
-                        <strong>grammer</strong>
+                        <strong>Crimstagram</strong>
 
                         {% endif %}
                         </p>
                        
                         <!-- SECTION 2 (IMAGE) -->
                         <!-- POSTED IMAGE -->
-                        <a href="{{ collins.image }}" data-lightbox="gallery">
-                            <img src="{{ collins.image.url }}" class="img-responsive" style="width:100%;margin-left: 0%;margin-top:15px; ">
+                        <a href="{{ }}" data-lightbox="gallery">
+                            <img src="{{ .url }}" class="img-responsive" style="width:100%;margin-left: 0%;margin-top:15px; ">
                         </a>
 
                         <!--Like & Comment Section -->
@@ -66,7 +66,7 @@
                         {% if all_users %} {% for user in all_users %}
                         <strong> "{{user.user}}" </strong>
                         {% endfor %}{% else %}
-                        <p><strong>crimmz-gram</strong> {{}}</p>
+                        <p><strong>crimmz-gram</strong> </p>
                         
                         {% endif %} 
 

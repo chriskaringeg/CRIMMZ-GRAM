@@ -18,7 +18,10 @@ from django.contrib import admin
 from insta import views
 from django.conf.urls.static import static
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url('', include('insta.urls')),
-    url('accounts/', include('registration.backends.simple.urls')),
+   url(r'^admin/', admin.site.urls),
+   url(r'^',include('insta.urls')),
+
+    #url for registration
+   url(r'^accounts/', include('registration.backends.simple.urls')),
+
 ]
