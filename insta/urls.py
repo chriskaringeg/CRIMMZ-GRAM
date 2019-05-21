@@ -37,7 +37,7 @@ urlpatterns=[
     #HOME Page url!
 
     #This is the home page url pattern 
-    url('',views.index, name='index'),
+    url(r'^$',views.index, name='index'),
 
 #################################################################################################################################################################################
 #URL FOR EXPLORE-PAGE

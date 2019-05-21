@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'instagram.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME': 'crimstagram',
+        'NAME': 'the_insta',
         'USER': 'chris',
     'PASSWORD':'blackpool005',
     }
@@ -122,6 +122,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+LOGIN_REDIRECT_URL ="/"
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
