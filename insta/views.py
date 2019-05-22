@@ -31,9 +31,11 @@ authenticated users
 #HOME PAGE VIEW FUNCTION
 #################################################################################################################################################################################
 
-#Home page view function
-# @login_required(login_url='/accounts/login/')
 def index(request):
+    return render(request,'display/index.html')
+#Home page view function
+@login_required(login_url='/accounts/login/')
+def feeds(request):
     images = Image.objects.all()
     all_users = Profile.objects.all()
     next = request.GET.get('next')
@@ -101,18 +103,18 @@ def profile(request):
 #################################################################################################################################################################################
 
 #Login page view function
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def upload(request):
     current_user = request.user
-    p = Profile.objects.filter(id=current_user.id).first()
-    imageuploader_profile = Image.objects.filter(imageuploader_profile=p).all()
+    p = request.user
+    # imageuploader_profile = Image.objects.filter(imageuploader_profile=p).all()
     if request.method == 'POST':
         form = PostForm(request.POST,request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.imageuploader_profile= p
             post.save()
-            return redirect('/')
+            return redirect('feeds')
     else:
         form =PostForm
     return render(request, 'display/upload.html', {"form": form})

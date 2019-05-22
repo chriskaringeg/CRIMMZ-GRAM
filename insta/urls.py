@@ -38,6 +38,7 @@ urlpatterns=[
 
     #This is the home page url pattern 
     url(r'^$',views.index, name='index'),
+     url(r'^feeds/$',views.feeds, name='feeds'),
 
 #################################################################################################################################################################################
 #URL FOR EXPLORE-PAGE
@@ -46,7 +47,7 @@ urlpatterns=[
     #EXPLORE-Page url!
     
     #This is the Explore page url 
-    url('explore',views.explore,name ='explore'),
+    url(r'^explore/',views.explore,name ='explore'),
 
 #################################################################################################################################################################################
 #URL FOR NOTIFICATION_PAGE
@@ -55,7 +56,7 @@ urlpatterns=[
     #NOTIFICATION-Page url!
     
     #This is the Notification page url 
-    url('notification',views.notification,name ='notification'),
+    url(r'^notification',views.notification,name ='notification'),
 
 #################################################################################################################################################################################
 #URL FOR PROFILE-PAGE
@@ -64,7 +65,7 @@ urlpatterns=[
     #PROFILE-Page url!
     
     #This is the Profile page url 
-    url('profile',views.profile,name ='profile'),
+    url(r'^profile/$',views.profile,name ='profile'),
 
 #################################################################################################################################################################################
 #URL FOR LOGIN-PAGE
@@ -82,7 +83,6 @@ urlpatterns=[
     #LOG-OUT-Page url!
     
     #This is the Login-Out page url 
-    url('logout',views.index,{'next_page': 'accounts:login'}, name='logout'),
 
 #################################################################################################################################################################################
 #URL FOR UPLOADING-PAGE
@@ -91,7 +91,7 @@ urlpatterns=[
     #POST_PIC-Page url!
     
     #This is the Post page url 
-    url('upload',views.upload,name ='upload'),
+    url(r'^upload/',views.upload,name ='upload'),
 
 ##################################################################################################################################################################################
 ##################################################################################################################################################################################

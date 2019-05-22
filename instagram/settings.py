@@ -18,6 +18,7 @@ from decouple import config,Csv
 MODE=config("MODE",default='dev')
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG',default=False,cast=bool)
+LOGIN_REDIRECT_URL ="/feeds"
 
 if config('MODE')=="dev":
    DATABASES = {
@@ -155,7 +156,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-LOGIN_REDIRECT_URL ="/"
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (

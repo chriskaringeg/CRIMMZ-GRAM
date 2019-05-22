@@ -1,0 +1,52 @@
+{% extends 'display/base.html'%}
+
+
+{% block content %}
+<div class="row">
+<div class="col-md-10">
+     <h1>Welcome to instagram </h1>
+<div class="row">
+    {% for image in images %}
+    <div class="col-md-4">
+        <div class="card animated zoomInRight">
+            <div class="card-title">
+                <img src="{{user.profile.profile_pic.url}}" alt="" width="20" height="30">
+                
+            </div>
+            <div class="card-img-top ">
+                <img src="{{image.image.url}}" alt="" class="rgba-red-slight i" width="100%" height="350">
+            </div>
+            <div class="card-footer">
+                <h2></h2>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+<div class="col-md-2">
+    <div class="card testimonial-card">
+        <!-- Background color -->
+        <div class="card-up indigo lighten-1"></div>
+
+      
+        <!-- Avatar -->
+    
+      
+        <!-- Content -->
+        <div class="card-body">
+          <!-- Name -->
+          <h4 class="card-title text-center pink-text"><a href="/accounts/login/">Login</a> </h4>
+         
+
+        
+          <hr>
+          <!-- Quotation -->
+        </div>
+        
+      </div>
+      <!-- Card -->
+   
+</div>
+</div>
+{% endblock %}

@@ -13,7 +13,10 @@
           <b>
             <i class="far fa-compass" style="font-size:36px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <i class='far fa-heart' style='font-size:36px'></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <i class="fa fa-user" style="font-size:36px"><a class="nav-link open-nav"></a></i>
+            {%if user.is_authenticated%}
+           <a href='{%url "profile"%}' class="nav-link open-nav"><i class="fa fa-user" style="font-size:36px"></i></a>
+          <a href="/logout"><i class="fa fa-logout" style="font-size:36px"></i>Logout</a> 
+          {%endif%}
         </li>
       </ul>
     </section>
