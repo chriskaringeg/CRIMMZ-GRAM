@@ -21,21 +21,23 @@
                 <!-- Instagram image at the top of Login form -->
                 
                     <img src="../../static/images/instalogowhite.png" alt="signuplogo " style="width:250px; height:80px;margin: 5px auto; display: block;">
-                
+                   <h1 style="text-align: center">crimmstagram</h1>
                 <!--Collaplse Instagram image at the top of Login form -->
 
                 <div class="panel-body">
 
                     <form action="/accounts/login/" method="POST">
-                        {% csrf_token %} {% bootstrap_form form %}
+
+                        {% csrf_token %} 
+                        {% bootstrap_form form %}
 
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
                         </div>
 
                         <div class="col-xs-10"></div>
-                        <h2 class="text-center">
-                            <small>OR</small>
+                        <!-- <h2 class="text-center">
+                            <small>OR</small> -->
                         </h2>
                         <div class="col-xs-2"></div>
 
@@ -56,7 +58,7 @@
 
             </div>
             <!-- Play Store and Apple store Images With well text to put them sidebyside! -->
-            <div class="login-playstorebtn">
+           <!--  <div class="login-playstorebtn">
             
             
                 <div class="googlebtn">
@@ -69,10 +71,10 @@
             
                     <a href="https://www.apple.com/us/search/instagram?src=itunes_serp"><img src="../../static/images/applestore.jpeg"  alt="signuplogo " style="width:150px; height:40px "></a>
             
-                </div>
+                </div> -->
             
             </div>
-            <!--Collapse! Play Store and Apple store Images With well text to put them sidebyside! -->
+           
 
         </div>
 
