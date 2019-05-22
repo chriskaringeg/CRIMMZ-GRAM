@@ -64,7 +64,7 @@ ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
 DISABLE_COLLECTSTATIC=1
 
 ## Installation
-- To access this application on your command line, you need to clone it git clone https://github.com/chriskaringeg/CRIMMZ-GRAM.git.git
+- To access this application on your command line, you need to clone it git clone https://github.com/chriskaringeg/CRIMMZ-GRAM.git
 - Create a requirements.txt in the root folder and copy the requirements above.
 - Install the required technologies with pip install -r requirements.txt
 - Create a .env file and copy the .env code above
