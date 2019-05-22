@@ -34,10 +34,18 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     bio = models.CharField(max_length=350) 
-    profile_pic = models.ImageField(upload_to='ProfPic/')
+    profile_pic = models.ImageField(upload_to='ProfPic/',default="default.jpg")
     profile_avatar = models.ImageField(upload_to='AVPic/')
     date = models.DateTimeField(auto_now_add=True, null= True)  
+    
+    @receiver(post_save, sender=User)
+    def create_profile(sender, instance, created, **kwargs):
+       if created:
+           Profile.objects.create(user=instance)
 
+    @receiver(post_save, sender=User)
+    def save_profile(sender,instance,**kwargs):
+       instance.profile.save()  
 
     '''Method to filter database results'''
     def __str__(self):

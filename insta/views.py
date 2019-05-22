@@ -34,11 +34,11 @@ authenticated users
 #Home page view function
 # @login_required(login_url='/accounts/login/')
 def index(request):
-    all_images = Image.objects.all()
+    images = Image.objects.all()
     all_users = Profile.objects.all()
     next = request.GET.get('next')
     if next: return redirect(next)
-    return render(request, 'display/home.html',  {"all_images": all_images}, {"all_users":all_users})
+    return render(request, 'display/home.html',  {"images": images}, {"all_users":all_users})
 def profile_index(request):
         if request.method == 'POST':
            form = UploadForm(request.POST,request.FILES)
