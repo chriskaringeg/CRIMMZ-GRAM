@@ -5,7 +5,8 @@
 KARINGE KINYUA
 
 ## Description
-A personal clone of the popular photo-sharing site Instagram(desktop version)
+
+A clone of the popular photo-sharing site Instagram
 
 ## User Stories 
 - Sign in to the application to start using.
