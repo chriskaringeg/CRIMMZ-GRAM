@@ -4,13 +4,13 @@
 {% block content %}
 <div class="row">
 <div class="col-md-10">
-     <h1>Welcome to instagram </h1>
+     <h1>Welcome to CRIMMSTAGRAM </h1>
 <div class="row">
-    {% for image in images %}
+ 
     <div class="col-md-4">
         <div class="card animated zoomInRight">
             <div class="card-title">
-                <img src="{{user.profile.profile_pic.url}}" alt="" width="20" height="30">
+                   <img src="/static/img/gra.png">
                 
             </div>
             <div class="card-img-top ">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    {% endfor %}
+ 
 </div>
 </div>
 <div class="col-md-2">
@@ -38,7 +38,7 @@
           <!-- Name -->
           <h4 class="card-title text-center pink-text"><a href="/accounts/login/">Login</a> </h4>
          
-
+       
         
           <hr>
           <!-- Quotation -->
@@ -49,4 +49,4 @@
    
 </div>
 </div>
-{% endblock %}
+{%endblock%}
