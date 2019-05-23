@@ -42,34 +42,34 @@ $ pip install django==1.11
 $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 
 ## Requirements
-config==0.4.0
-confusable-homoglyphs==3.2.0
-dj-database-url==0.5.0
-Django==1.11
-django-bootstrap3==11.0.0
-django-crispy-forms==1.7.2
-django-heroku==0.3.1
-django-registration==2.4.1
-django-tinymce==2.8.0
-gunicorn==19.9.0
-Pillow==5.4.1
-psycopg2==2.7.7
-python-decouple==3.1
-pytz==2018.9
-whitenoise==3.3.1
+- config==0.4.0
+- confusable-homoglyphs==3.2.0
+- dj-database-url==0.5.0
+- Django==1.11
+- django-bootstrap3==11.0.0
+- django-crispy-forms==1.7.2
+- django-heroku==0.3.1
+- django-registration==2.4.1
+- django-tinymce==2.8.0
+- gunicorn==19.9.0
+- Pillow==5.4.1
+- psycopg2==2.7.7
+- python-decouple==3.1
+- pytz==2018.9
+- whitenoise==3.3.1
 
 
 
 ## .ENV file
-SECRET_KEY='<SECRET_KEY>'
-DEBUG=True #set to false in production
-DB_NAME='tribune'
-DB_USER='user'
-DB_PASSWORD='password'
-DB_HOST='127.0.0.1'
-MODE='dev' #set to 'prod' in production
-ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
-DISABLE_COLLECTSTATIC=1
+- SECRET_KEY='<SECRET_KEY>'
+- DEBUG=True #set to false in production
+- DB_NAME='tribune'
+- DB_USER='user'
+- DB_PASSWORD='password'
+- DB_HOST='127.0.0.1'
+- MODE='dev' #set to 'prod' in production
+- ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
+- DISABLE_COLLECTSTATIC=1
 
 ## Installation
 - To access this application on your command line, you need to clone it git clone https://github.com/chriskaringeg/CRIMMZ-GRAM.git
