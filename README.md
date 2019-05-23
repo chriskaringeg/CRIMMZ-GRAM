@@ -42,13 +42,11 @@ $ pip install django==1.11
 $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 
 ## Requirements
-
--bootstrap4==0.1.0
 config==0.4.0
 confusable-homoglyphs==3.2.0
 dj-database-url==0.5.0
 Django==1.11
-django-bootstrap4==0.0.7
+django-bootstrap3==11.0.0
 django-crispy-forms==1.7.2
 django-heroku==0.3.1
 django-registration==2.4.1
@@ -59,6 +57,7 @@ psycopg2==2.7.7
 python-decouple==3.1
 pytz==2018.9
 whitenoise==3.3.1
+
 
 
 ## .ENV file
