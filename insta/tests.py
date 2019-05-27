@@ -1,75 +1,64 @@
-
 from django.test import TestCase
-from .models import Comments, Image, Profile
-from django.core.files.uploadedfile import SimpleUploadedFile
+from .models import Image,Profile
+from django.contrib.auth.models import User
+ # Create your tests here.
 
 
-class Comment(TestCase):
+class ProfileTestCase(TestCase):
 
+
+    
+    # SetUp method
     def setUp(self):
+        
+        #creating a user instance
+        self.user = User(username="chris",email="ckaringe@gmail.com",password="blackpool005")
+        self.image = Profile(user=self.user,profile_avatar="ben_H62Kawu.jpeg",bio="Rolls-Royce Wraith")
 
-        self.loise = User.objects.create(username="chris")
-        self.picture = Image.objects.create(image='ai-robot.jpg', user=self.chris)
-        self.test_review = Review.objects.create(user=self.chris, image=self.image1')
-        self.test_review.save()
+        def tearDown(self):
+            User.objects.all().delete()
+            Image.objects.all().delete()
+            
+        # Testing Instance
+        def test_instance(self):
+            self.assertTrue(isinstance(self.image,Image))
+            
+    def test_save_profile(self):
+        new_user = User(id=1,username="chris",email="ckaringe@gmail.com",password="blackpool005")
+        new_user.save()
+        users = User.objects.all()
+        self.assertTrue(len(users)>=1)
+        
+    def test_delete_profile(self):
+        new_user = User(id=1,username="chris",email="ckaringe@gmail.com",password="blackpool005")
+        new_user.delete()
+        users = User.objects.all()
+        self.assertTrue(len(users)<=0)
+class ImageTestCase(TestCase):
+    
+    # SetUp method
+    def setUp(self):
+        #creating a user instance
+        self.user = User(username="chris",email="ckaringeg@gmail.com",password="blackpool005")
+        self.image = Image(image="default.jpg",tag_someone="ben2_2HRlWyC.jpeg",image_caption="ai at its best")
 
-    #Testing instance
+    def tearDown(self):
+        User.objects.all().delete()
+        Image.objects.all().delete()
+        
+    # Testing Instance
 
     def test_instance(self):
-
-        self.assertTrue(isinstance(self.test_reviews, Review))
-
-    #Testing Save method
-
-    def test_save_method(self):
-        reviews = Review.objects.all()
-        self.assertTrue(len(reviews)>0)
-
-    def test_save_review(self):
-        self.assertEqual(len(Review.objects.all()), 1)
-
-    # Tear down method
-    def tearDown(self):
-        Review.objects.all().delete()
-
-        # Testing delete method
-
-    def test_delete_review(self):
-        self.test_review.delete()
-        self.assertEqual(len(Review.objects.all()), 0)
-
-
-
-
-
-class ImageTestClass(TestCase):
-    # Set up method
-    def setUp(self):
-
-
-        self.nairobi = Location.objects.create(name="nairobi")
-        self.funny= tags.objects.create(name='key')
-
-
-        self.test_image = Image.objects.create(image='imagesef', name='band', description='This is a description', location=self.nairobi, )
-
-        self.test_image.save()
-
-    def test_save_method(self):
-        self.test_image.save()
-        test_images = Image.objects.all()
-        self.assertTrue(len(test_images) > 0)
-
-    # Testing save method
+        self.assertTrue(isinstance(self.image,Image))
+            
     def test_save_image(self):
-        self.assertEqual(len(Image.objects.all()), 1)
-
-    # Tear down method
-    def tearDown(self):
-        Image.objects.all().delete()
-
+        new_image =Image(image="default.jpg",tag_someone="ben2_2HRlWyC.jpeg",image_caption="ai at its best")
+        new_image.save()
+        images = Image.objects.all()
+        self.assertTrue(len(images)>=1)
+        
     def test_delete_image(self):
-        Image.delete_image_by_id(self.test_image.id)
-        self.assertEqual(len(Image.objects.all()), 0)from django.test import TestCase
-
-# Create your tests here.
+       new_image =Image(id=1,image="default.jpg",tag_someone="ben2_2HRlWyC.jpeg",image_caption="ai at its best")
+       new_image.delete()
+       images = Image.objects.all()
+       self.assertTrue(len(images)==0)
