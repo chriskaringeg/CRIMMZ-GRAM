@@ -81,7 +81,8 @@ def notification(request):
 #Profile page view function
 # @login_required(login_url='/accounts/login/')
 def profile(request):
-    return render(request, 'display/userprofile.html')
+    images = Image.objects.all()
+    return render(request, 'display/userprofile.html', {'images': images})
 
 #################################################################################################################################################################################
 #LOG-OUT PAGE VIEW FUNCTION

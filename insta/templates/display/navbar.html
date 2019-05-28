@@ -1,64 +1,76 @@
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+	integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <link rel="stylesheet" href="../static/css/baseinsters.css">
 <nav class="navbar">
-    <section class="logo-section"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png"/>
-      <div></div><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png"/>
-    </section>
-    <form class="search-section">
-      <input class="input-search" type="search" name="search" placeholder="image"/>
-    </form>
-    <section class="awesome-font">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <b>
-            <i class="far fa-compass" style="font-size:36px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class='far fa-heart' style='font-size:36px'></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {%if user.is_authenticated%}
-           <a href='{%url "profile"%}' class="nav-link open-nav"><i class="fa fa-user" style="font-size:36px"></i></a>
-          <a href="/logout"><i class="fa fa-logout" style="font-size:36px"></i>Logout</a> 
-          {%endif%}
-        </li>
-      </ul>
-    </section>
-  </nav>
-  <style>
-  	.navbar {
-  	  display: flex;
-  	  justify-content: space-between;
-  	  align-items: center;
-  	  padding: 10px;
-  	  border-bottom: 4px solid blue;
-  	}
-  	.navbar .logo-section {
-  	  display: flex;
-  	  align-items: center;
-  	}
-  	.navbar .logo-section div {
-  	  align-self: stretch;
-  	  width: 2px;
-  	  background: black;
-  	  margin: 0 20px;
-  	}
-  	.navbar .icons-section .fa {
-  	  text-decoration: none;
-  	  color: inherit;
-  	  font-size: 2rem;
-  	  margin: 0 10px;
-  	}
-  	.navbar .logo {
-  	  width: 40px;
-  	}
-  	.navbar .logoname {
-  	  width: 125px;
-  	}
-  	.navbar .input-search {
-  	  padding: 10px;
-  	  text-align: center;
-  	  border-radius: 5px;
-  	  border: 2px solix #ddd;
-  	  outline: 0;
-  	}
-  	.navbar .input-search:focus {
-  	  text-align: left;
-  	}
-  </style>
+	<a href="{% url 'feeds'%}">
+		<section class="logo-section"><img class="logo"
+				src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" />
+			<div></div><img class="logoname"
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" />
+		</section>
+	</a>
+	<form class="search-section">
+		<input class="input-search" type="search" name="search" placeholder="image" />
+	</form>
+	<section class="awesome-font">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<b>
+					<i class="far fa-compass" style="font-size:36px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<i class='far fa-heart' style='font-size:36px'></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					{%if user.is_authenticated%}
+					<a href='{%url "profile"%}' class="nav-link open-nav"><i class="fa fa-user" style="font-size:36px"></i></a>
+					<a href="/logout"><i class="fa fa-logout" style="font-size:36px"></i>Logout</a>
+					{%endif%}
+			</li>
+		</ul>
+	</section>
+</nav>
+<style>
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+		border-bottom: 4px solid blue;
+	}
+
+	.navbar .logo-section {
+		display: flex;
+		align-items: center;
+	}
+
+	.navbar .logo-section div {
+		align-self: stretch;
+		width: 2px;
+		background: black;
+		margin: 0 20px;
+	}
+
+	.navbar .icons-section .fa {
+		text-decoration: none;
+		color: inherit;
+		font-size: 2rem;
+		margin: 0 10px;
+	}
+
+	.navbar .logo {
+		width: 40px;
+	}
+
+	.navbar .logoname {
+		width: 125px;
+	}
+
+	.navbar .input-search {
+		padding: 10px;
+		text-align: center;
+		border-radius: 5px;
+		border: 2px solix #ddd;
+		outline: 0;
+	}
+
+	.navbar .input-search:focus {
+		text-align: left;
+	}
+</style>
